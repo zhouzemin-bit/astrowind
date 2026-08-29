@@ -32,6 +32,9 @@ i18n:
   textDirection: ltr
 
 apps:
+  announcement:
+    isEnabled: false
+
   blog:
     isEnabled: true
     postsPerPage: 6
