@@ -28,7 +28,9 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 export default defineConfig({
   //output: 'static',
   output: 'server', // 如果是全静态站带少量动态功能可填 'hybrid'
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: 'compile',
+  }),
   
   integrations: [
     sitemap(),
