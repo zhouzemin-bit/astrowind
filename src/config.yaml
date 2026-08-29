@@ -1,6 +1,6 @@
 site:
-  name: Minde Technologies GmbH
-  site: 'https://astro.mindetech.ch'
+  name: Minde Technologies
+  site: 'https://www.mindetech.ch'
   base: '/'
   trailingSlash: false
 
@@ -9,9 +9,9 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: MindeTech
-    template: '%s — AstroWind'
-  description: "\U0001F680 Based in Switzerland to provide lastest ICT and solar energy technlogies and products from China."
+    default: 'Minde Technologies - Innovative Solutions Bridging Europe and China'
+    template: '%s — Minde Technologies'
+  description: "Minde Technologies GmbH: Innovative Solutions Bridging Europe and China in Technology Expertise, ICT, and Robotics."
   robots:
     index: true
     follow: true
