@@ -3,6 +3,8 @@ import { fileURLToPath } from 'url';
 
 import { defineConfig } from 'astro/config';
 
+import cloudflare from '@astrojs/cloudflare';
+
 import { unified } from '@astrojs/markdown-remark';
 
 import sitemap from '@astrojs/sitemap';
@@ -24,8 +26,10 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  output: 'static',
-
+  //output: 'static',
+  output: 'server', // 如果是全静态站带少量动态功能可填 'hybrid'
+  adapter: cloudflare(),
+  
   integrations: [
     sitemap(),
     mdx(),
