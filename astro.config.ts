@@ -92,8 +92,12 @@ export default defineConfig({
 
   markdown: {
     processor: unified({
-      remarkPlugins: [readingTimeRemarkPlugin],
-      rehypePlugins: [responsiveTablesRehypePlugin],
+      remarkPlugins: [
+        //readingTimeRemarkPlugin
+        ],
+      rehypePlugins: [
+        //responsiveTablesRehypePlugin
+        ],
     }),
   },
 
