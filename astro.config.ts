@@ -31,9 +31,11 @@ export default defineConfig({
   adapter: cloudflare({
     imageService: 'compile',
   }),
+
+  site: 'https://astro.mindetech.ch/',
   
   integrations: [
-    sitemap(),
+    //sitemap(),
     //mdx(),
     icon({
       include: {
