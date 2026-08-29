@@ -34,7 +34,7 @@ export default defineConfig({
   
   integrations: [
     sitemap(),
-    mdx(),
+    //mdx(),
     icon({
       include: {
         tabler: ['*'],
