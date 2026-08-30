@@ -3,6 +3,7 @@ export const headerData = {
     { text: 'Home', href: '/' },
     { text: 'Solutions', href: '/#solutions' },
     { text: 'Services', href: '/#services' },
+    { text: 'Why Minde', href: '/#why-us' },
     { text: 'About Us', href: '/about' },
     { text: 'Contact', href: '/contact' },
   ],
