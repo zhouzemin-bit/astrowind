@@ -2,7 +2,7 @@ export const headerData = {
   links: [
     { text: 'Home', href: '/' },
     { text: 'Solutions', href: '/#solutions' },
-    { text: 'Products', href: '/#products' },
+    { text: 'Services', href: '/#services' },
     { text: 'About Us', href: '/#about' },
     { text: 'Contact', href: '/#contact' },
   ],
