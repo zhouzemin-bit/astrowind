@@ -4,6 +4,9 @@ site:
   base: '/'
   trailingSlash: false
 
+  announcement:
+    isEnabled: false
+  
   googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
 
 # Default SEO metadata
@@ -32,9 +35,6 @@ i18n:
   textDirection: ltr
 
 apps:
-  announcement:
-    isEnabled: false
-
   blog:
     isEnabled: true
     postsPerPage: 6
