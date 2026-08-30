@@ -3,7 +3,9 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+
 
 const metadata = {
   title: 'Minde Technologies — Innovative Solutions Bridging Europe and China',
@@ -139,6 +141,31 @@ const metadata = {
       },
     ]}
   />
+
+<Steps
+  id="why-us"
+  title="Why Partner with Minde Technologies"
+  items={[
+    {
+      title: 'Swiss Engineering Standard & Legal Compliance',
+      description:
+        'Headquartered in Fehraltorf (Zurich), we adhere to the highest Swiss engineering principles and strict data confidentiality under the Swiss revDSG.',
+      icon: 'tabler:award',
+    },
+    {
+      title: 'Dual-Region Domain Knowledge',
+      description:
+        'We bridge the communication and technical gap between European quality standards and high-velocity Asian ICT ecosystems.',
+      icon: 'tabler:world',
+    },
+    {
+      title: 'Full Lifecycle Engineering Engagement',
+      description:
+        'From architectural consultation and proof of concept (PoC) to deployment, local maintenance, and ongoing SLA support.',
+      icon: 'tabler:headset',
+    },
+  ]}
+/>
   <!-- 底部行动呼吁 -->
   <CallToAction
     id="contact"
