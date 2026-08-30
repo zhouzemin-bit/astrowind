@@ -27,6 +27,10 @@ export const footerData = {
       ],
     },
   ],
+  secondaryLinks: [
+    { text: 'Impressum', href: '/impressum' },
+    { text: 'Privacy Policy', href: '/privacy' },
+  ],
   footNote: `
     © ${new Date().getFullYear()} Minde Technologies GmbH. All rights reserved.
   `,
