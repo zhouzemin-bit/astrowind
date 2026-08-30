@@ -14,8 +14,9 @@ export const footerData = {
     {
       title: 'Company',
       links: [
-        { text: 'About Minde Technologies', href: '/#about' },
+        { text: 'About Us', href: '/#about' },
         { text: 'Solutions', href: '/#solutions' },
+        { text: 'Services', href: '/#services' },
       ],
     },
     {
