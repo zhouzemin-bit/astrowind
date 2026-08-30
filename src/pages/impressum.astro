@@ -1,16 +1,59 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-const metadata = { title: 'Impressum / Legal Notice' };
+
+const metadata = {
+  title: 'Impressum (Legal Notice) — Minde Technologies GmbH',
+};
 ---
+
 <Layout metadata={metadata}>
-  <section class="mx-auto max-w-4xl px-6 py-12">
-    <h1 class="text-3xl font-bold mb-6">Impressum (Legal Notice)</h1>
-    <div class="space-y-4 text-gray-700 dark:text-gray-300">
-      <p><strong>Company Name:</strong> Minde Technologies GmbH</p>
-      <p><strong>Address:</strong> Mülistrasse 5, 8320 Fehraltorf, Switzerland</p>
-      <p><strong>Email:</strong> business@mindetech.ch</p>
-      <p><strong>Commercial Register UID:</strong> CHE-XXX.XXX.XXX (请填写真实UID)</p>
-      <p><strong>Management:</strong> [负责人姓名]</p>
+  <section class="mx-auto max-w-4xl px-6 py-12 text-default sm:py-16 lg:py-20">
+    <h1 class="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Impressum / Legal Notice</h1>
+
+    <div class="space-y-8 leading-relaxed text-muted">
+      <!-- 1. 公司法定信息 -->
+      <div class="rounded-lg border border-slate-200 p-6 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
+        <h2 class="text-lg font-semibold text-default mb-3">Company Information</h2>
+        <div class="space-y-1 text-sm">
+          <p><strong>Legal Entity:</strong> Minde Technologies GmbH</p>
+          <p><strong>Address:</strong> Mülistrasse 5, 8320 Fehraltorf, Switzerland</p>
+          <p><strong>Commercial Register UID:</strong> CHE-374.069.397 </p>
+          <p><strong>Commercial Registry Office:</strong> Commercial Register of the Canton of Zurich (Handelsregisteramt des Kantons Zürich)</p>
+          <p><strong>Authorized Representative:</strong> Management of Minde Technologies GmbH</p>
+          <p><strong>Email:</strong> <a href="mailto:business@mindetech.ch" class="text-primary hover:underline">business@mindetech.ch</a></p>
+          <p><strong>Website:</strong> <a href="https://www.mindetech.ch" class="text-primary hover:underline">www.mindetech.ch</a></p>
+        </div>
+      </div>
+
+      <!-- 2. 内容免责声明 -->
+      <div>
+        <h2 class="text-xl font-semibold text-default mb-2">Disclaimer of Liability</h2>
+        <p class="text-sm">
+          The author assumes no liability regarding the factual correctness, accuracy, timeliness, reliability, and completeness of the information provided.
+        </p>
+        <p class="text-sm mt-2">
+          Liability claims against the author for damages of a material or immaterial nature arising from access to, use, or non-use of the published information, misuse of the connection, or technical faults are explicitly excluded to the extent permitted by Swiss law. All offers and proposals are non-binding.
+        </p>
+      </div>
+
+      <!-- 3. 外部链接免责 -->
+      <div>
+        <h2 class="text-xl font-semibold text-default mb-2">Disclaimer for Links</h2>
+        <p class="text-sm">
+          References and links to third-party websites lie outside our scope of responsibility. Access to and use of such websites are entirely at the user's own risk. We expressly declare that we have no influence on the design, content, or offerings of linked sites.
+        </p>
+      </div>
+
+      <!-- 4. 版权与知识产权保护 -->
+      <div>
+        <h2 class="text-xl font-semibold text-default mb-2">Copyright Notice</h2>
+        <p class="text-sm">
+          The copyright and all other rights to content, images, photos, brand graphics, or other files on this website belong exclusively to <strong>Minde Technologies GmbH</strong> or the specifically named right holders. 
+        </p>
+        <p class="text-sm mt-2">
+          Any reproduction, modification, transmission, or public reuse of any elements requires the prior written consent of the copyright owner.
+        </p>
+      </div>
     </div>
   </section>
 </Layout>
