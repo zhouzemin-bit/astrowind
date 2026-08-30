@@ -3,10 +3,10 @@ export const headerData = {
     { text: 'Home', href: '/' },
     { text: 'Solutions', href: '/#solutions' },
     { text: 'Services', href: '/#services' },
-    { text: 'About Us', href: '/#about' },
-    { text: 'Contact', href: '/#contact' },
+    { text: 'About Us', href: '/about' },
+    { text: 'Contact', href: '/contact' },
   ],
-  actions: [{ text: 'Contact Us', href: 'mailto:business@mindetech.ch' }],
+  actions: [{ text: 'Contact Us', href: 'mailto:info@mindetech.ch' }],
 };
 
 export const footerData = {
@@ -14,7 +14,7 @@ export const footerData = {
     {
       title: 'Company',
       links: [
-        { text: 'About Us', href: '/#about' },
+        { text: 'About Us', href: '/about' },
         { text: 'Solutions', href: '/#solutions' },
         { text: 'Services', href: '/#services' },
       ],
@@ -22,7 +22,7 @@ export const footerData = {
     {
       title: 'Contact',
       links: [
-        { text: 'Email: business@mindetech.ch', href: 'mailto:business@mindetech.ch' },
+        { text: 'Email: info@mindetech.ch', href: 'mailto:info@mindetech.ch' },
         { text: 'Mülistrasse 5, 8320 Fehraltorf, Switzerland', href: '#' },
       ],
     },
