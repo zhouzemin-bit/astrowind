@@ -12,7 +12,8 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero 模块 -->
-  <Hero
+<!--
+<Hero
     actions={[
       { variant: 'primary', text: 'Get in Touch', href: 'mailto:info@mindetech.ch' },
       { text: 'Learn More', href: '#solutions' },
@@ -25,9 +26,31 @@ const metadata = {
       Empowering enterprises with cutting-edge technology expertise in ICT, intelligent robotics, and cross-border innovation.
     </Fragment>
   </Hero>
+-->
+<Hero
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Explore Solutions',
+      href: '#solutions',
+    },
+    {
+      text: 'Contact Our Team',
+      href: '#contact',
+    },
+  ]}
+>
+  <Fragment slot="title">
+    Enterprise ICT Solutions Bridging <span class="text-accent dark:text-white highlight">Europe & Asia</span>
+  </Fragment>
 
+  <Fragment slot="subtitle">
+    Empowering enterprises with robust IT infrastructure, mission-critical systems integration, and seamless cross-border technology consulting from Fehraltorf, Switzerland.
+  </Fragment>
+</Hero>
   <!-- 核心业务 / 特性 -->
-  <Features
+<!-- 
+<Features
     id="solutions"
     title="Our Core Expertise"
     subtitle="Tailored technology consulting and market entry solutions."
@@ -49,7 +72,51 @@ const metadata = {
       },
     ]}
   />
-
+-->
+<Features
+  id="solutions"
+  tagline="Core Expertise"
+  title="Tailored Enterprise ICT & Consulting"
+  subtitle="Reliable engineering, end-to-end integration, and localized technology support."
+  items={[
+    {
+      title: 'Enterprise IT Infrastructure',
+      description:
+        'Architecting resilient server environments, high-performance networking, and hybrid cloud infrastructures tailored for strict enterprise workloads.',
+      icon: 'tabler:server-2',
+    },
+    {
+      title: 'Operating Systems & Virtualization',
+      description:
+        'Deep expertise in enterprise Linux distributions, hypervisors, and container orchestration platforms ensuring high uptime and stability.',
+      icon: 'tabler:cpu',
+    },
+    {
+      title: 'Data Continuity & Disaster Recovery',
+      description:
+        'Robust data replication, automated backup architectures, and failover disaster recovery solutions designed for regulatory compliance.',
+      icon: 'tabler:shield-lock',
+    },
+    {
+      title: 'Cross-Border Technology Bridge',
+      description:
+        'Facilitating bilateral market expansion between Europe and China, handling technical localization, compliance verification, and ecosystem integration.',
+      icon: 'tabler:arrows-exchange',
+    },
+    {
+      title: 'System Integration & Middleware',
+      description:
+        'Connecting heterogeneous platforms, modernizing legacy enterprise systems, and delivering low-latency, secure API gateways.',
+      icon: 'tabler:network',
+    },
+    {
+      title: 'Swiss On-Premise Support & SLA',
+      description:
+        'Local engineering presence based in Fehraltorf (Zurich) providing rapid troubleshooting, lifecycle upgrades, and technical consulting.',
+      icon: 'tabler:tool',
+    },
+  ]}
+/>
   <Features
     id="services"
     title="Our Core Services"
