@@ -19,15 +19,15 @@ metadata:
     index: true
     follow: true
   openGraph:
-    site_name: MindeTech
+    site_name: 'Minde Technologies'
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@arthelokyo'
-    site: '@arthelokyo'
+    handle: '@mindetech'
+    site: '@mindetech'
     cardType: summary_large_image
 
 i18n:
