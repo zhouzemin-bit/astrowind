@@ -1,8 +1,7 @@
 export const headerData = {
   links: [
     { text: 'Home', href: '/' },
-    { text: 'Solutions', href: '/#solutions' },
-    { text: 'Services', href: '/#services' },
+    { text: 'Solutions & Services', href: '/#solutions' },
     { text: 'Why Minde', href: '/#why-us' },
     { text: 'About Us', href: '/about' },
     { text: 'Contact', href: '/contact' },
@@ -16,8 +15,7 @@ export const footerData = {
       title: 'Company',
       links: [
         { text: 'About Us', href: '/about' },
-        { text: 'Solutions', href: '/#solutions' },
-        { text: 'Services', href: '/#services' },
+        { text: 'Solutions & Services', href: '/#solutions' },
       ],
     },
     {
