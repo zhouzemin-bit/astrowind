@@ -4,6 +4,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import Steps from '~/components/widgets/Steps.astro';
+import Brands from '~/components/widgets/Brands.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 
@@ -79,6 +80,34 @@ const metadata = {
     },
   ]}
 />
+<section class="py-12 bg-gray-50/50 dark:bg-slate-800/30 border-y border-gray-100 dark:border-slate-800">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+    <p class="text-xs font-semibold uppercase tracking-wider text-muted mb-6">
+      Technologies, Platforms & Ecosystems We Integrate
+    </p>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center justify-center text-sm font-medium text-gray-600 dark:text-gray-300">
+      <div class="p-4 rounded-lg bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 shadow-sm flex items-center justify-center">
+        Enterprise Linux
+      </div>
+      <div class="p-4 rounded-lg bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 shadow-sm flex items-center justify-center">
+        Kubernetes & Cloud Native
+      </div>
+      <div class="p-4 rounded-lg bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 shadow-sm flex items-center justify-center">
+        Virtualization & KVM
+      </div>
+      <div class="p-4 rounded-lg bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 shadow-sm flex items-center justify-center">
+        High-Availability Storage
+      </div>
+      <div class="p-4 rounded-lg bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 shadow-sm flex items-center justify-center">
+        Disaster Recovery
+      </div>
+      <div class="p-4 rounded-lg bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 shadow-sm flex items-center justify-center">
+        RESTful API & Middleware
+      </div>
+    </div>
+  </div>
+</section>
 <Steps
   id="why-us"
   tagline="Why Minde"
