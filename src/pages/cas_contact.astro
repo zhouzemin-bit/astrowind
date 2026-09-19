@@ -1173,13 +1173,17 @@ const title = "Contact Form – Minde Technologies";
         hideMessage();
 
         try {
-            const formData = new FormData(form);
+           const formData = new FormData(form);
+const formObject = Object.fromEntries(formData.entries());
 
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                body: formData
-            });
-
+const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    },
+    body: JSON.stringify(formObject)
+});
             const result = await response.json();
 
             if (!response.ok || result.success !== true) {
