@@ -553,7 +553,7 @@ const title = "Contact Form – Minde Technologies";
 
             <div class="header-logo">
                 <img
-                    src="../assets/images/minde-technologies-logo-weiss.png"
+                    src="/assets/images/minde-technologies-logo-weiss.png"
                     alt="Minde Technologies Logo"
                 />
             </div>
@@ -623,19 +623,6 @@ const title = "Contact Form – Minde Technologies";
                 name="from_name"
                 value="Minde Technologies Website"
             />
-
-            <input
-                type="hidden"
-                name="replyto"
-                value="christof.zihlmann@mindetech.ch"
-            />
-
-
-            <!--
-                Optional reply-to field.
-                Web3Forms will use the visitor's email address
-                as the reply-to address.
-            -->
 
             <!-- Honeypot anti-spam field -->
 
@@ -960,12 +947,35 @@ const title = "Contact Form – Minde Technologies";
             <!-- CAPTCHA -->
             <section class="input-section">
                 <h2 class="section-title">Security Check</h2>
+
                 <p style="font-size:12px; margin-bottom:10px;">
-                    Please complete the security check before sending.
+                    Please solve the following calculation before sending.
                 </p>
-                <div class="h-captcha" data-captcha="true"></div>
+
+                <div class="captcha-box">
+                    <div class="captcha-question">
+                        <span id="captchaQuestion">-- + -- = ?</span>
+                    </div>
+
+                    <input
+                        type="number"
+                        id="captchaAnswer"
+                        class="captcha-input"
+                        placeholder="Your answer"
+                        inputmode="numeric"
+                        autocomplete="off"
+                    />
+
+                    <button
+                        type="button"
+                        id="captchaRefresh"
+                        class="captcha-refresh">
+                        New question
+                    </button>
+                </div>
+
                 <div id="captchaError" class="error-message">
-                    Please complete the security check.
+                    Please enter the correct answer.
                 </div>
             </section>
 
@@ -1032,9 +1042,6 @@ const title = "Contact Form – Minde Technologies";
 
 </div>
 
-<!-- Web3Forms hCaptcha client -->
-<script src="https://web3forms.com/client/script.js" async defer></script>
-
 <!-- Keep this inline so Astro executes it in the browser unchanged -->
 <script is:inline>
 (() => {
@@ -1044,6 +1051,27 @@ const title = "Contact Form – Minde Technologies";
     const formMessage = document.getElementById("formMessage");
     const submitButton = document.getElementById("submitButton");
     const resetButton = document.getElementById("resetButton");
+
+    const captchaQuestion = document.getElementById("captchaQuestion");
+    const captchaAnswer = document.getElementById("captchaAnswer");
+    const captchaRefresh = document.getElementById("captchaRefresh");
+
+    let correctCaptchaAnswer = null;
+
+    function generateCaptcha() {
+        const number1 = Math.floor(Math.random() * 9) + 1;
+        const number2 = Math.floor(Math.random() * 9) + 1;
+
+        correctCaptchaAnswer = number1 + number2;
+        captchaQuestion.textContent = `${number1} + ${number2} = ?`;
+        captchaAnswer.value = "";
+        captchaAnswer.classList.remove("error");
+        document.getElementById("captchaError")?.classList.remove("visible");
+    }
+
+    generateCaptcha();
+
+    captchaRefresh?.addEventListener("click", generateCaptcha);
 
     const fields = {
         firma: document.getElementById("firma"),
@@ -1100,9 +1128,13 @@ const title = "Contact Form – Minde Technologies";
             valid = false;
         }
 
-        const captchaToken = form.querySelector('[name="h-captcha-response"]');
-        if (captchaToken && !captchaToken.value.trim()) {
+        const userCaptchaAnswer = parseInt(captchaAnswer.value, 10);
+        if (
+            Number.isNaN(userCaptchaAnswer) ||
+            userCaptchaAnswer !== correctCaptchaAnswer
+        ) {
             document.getElementById("captchaError")?.classList.add("visible");
+            captchaAnswer.classList.add("error");
             valid = false;
         }
 
@@ -1116,12 +1148,17 @@ const title = "Contact Form – Minde Technologies";
         input.addEventListener("input", () => updateFieldState(input));
     });
 
+    captchaAnswer?.addEventListener("input", () => {
+        captchaAnswer.classList.remove("error");
+        document.getElementById("captchaError")?.classList.remove("visible");
+    });
+
     resetButton?.addEventListener("click", () => {
         setTimeout(() => {
             clearErrors();
             hideMessage();
             form.querySelectorAll(".input-filled").forEach(el => el.classList.remove("input-filled"));
-            try { window.hcaptcha?.reset(); } catch (_) {}
+            generateCaptcha()
         }, 0);
     });
 
@@ -1138,7 +1175,6 @@ const title = "Contact Form – Minde Technologies";
 
             const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
-                headers: { "Accept": "application/json" },
                 body: formData
             });
 
@@ -1156,7 +1192,7 @@ const title = "Contact Form – Minde Technologies";
             form.reset();
             form.querySelectorAll(".input-filled").forEach(el => el.classList.remove("input-filled"));
             clearErrors();
-            try { window.hcaptcha?.reset(); } catch (_) {}
+            generateCaptcha()
 
         } catch (error) {
             console.error("Contact form submission failed:", error);
