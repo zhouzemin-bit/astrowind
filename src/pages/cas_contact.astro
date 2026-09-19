@@ -629,7 +629,7 @@ const title = "Contact Form – Minde Technologies";
             <input
                 type="hidden"
                 name="redirect"
-                value="https://www.mindetech.ch/cas_contact/success/"
+                value="https://www.mindetech.ch/cas_contact/?sent=1"
             />
 
             <!-- Honeypot anti-spam field -->
@@ -1100,6 +1100,34 @@ const title = "Contact Form – Minde Technologies";
         formMessage.textContent = message;
         formMessage.style.display = "block";
     }
+
+    function checkSubmissionSuccess() {
+        const params = new URLSearchParams(window.location.search);
+
+        if (params.get("sent") === "1") {
+            setMessage(
+                "success",
+                "Thank you! Your message was sent successfully."
+            );
+
+            // Remove ?sent=1 without reloading so a refresh does not
+            // show the success message again.
+            window.history.replaceState(
+                {},
+                document.title,
+                window.location.pathname
+            );
+
+            setTimeout(() => {
+                formMessage.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+            }, 100);
+        }
+    }
+
+    checkSubmissionSuccess();
 
     function clearErrors() {
         form.querySelectorAll(".error").forEach(el => el.classList.remove("error"));
