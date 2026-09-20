@@ -47,10 +47,6 @@ export const footerData = {
           text: 'Email: info@mindetech.ch',
           href: 'mailto:info@mindetech.ch',
         },
-        {
-          text: 'Mülistrasse 5, 8320 Fehraltorf, Switzerland',
-          href: '#',
-        },
       ],
     },
   ],
