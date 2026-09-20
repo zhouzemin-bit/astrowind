@@ -40,12 +40,8 @@ export const footerData = {
       title: 'Contact',
       links: [
         {
-          text: 'General Contact',
+          text: 'Contact Us',
           href: '/contact/',
-        },
-        {
-          text: 'Email: info@mindetech.ch',
-          href: 'mailto:info@mindetech.ch',
         },
       ],
     },
